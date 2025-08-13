@@ -1,0 +1,13 @@
+Structure:
+    collection of elements using different datatypes.
+
+declaration syntax:
+    struct structure_name
+	{
+	    data member1;   //datatype variable_name;
+	    data member2;    
+		data member3;
+	};
+	int main() {
+	    struct structure_name object_name;   //object/instance creation        
+	}

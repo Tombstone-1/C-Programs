@@ -1,0 +1,219 @@
+### Tokens - a physical block division for compiler
+	1. keywords
+	2. Operators
+	3. identifiers
+	4. constants
+	5. strings
+	6. special symbols
+
+
+### 3 Types of data types
+	1. primitive
+	2. derived 
+		1.function
+		2.array
+		3.refrence
+		4. 
+	3. user defined 
+		1.class
+		2.structure
+`		3.union
+		4.inert
+		5.extern
+
+### calculate range for signed and unsigned.
+
+signed data types:
+	1. minimum value : -2powern -1
+	2. maximum value : -2powern -1
+
+unsigned data types:
+	1. minimum value : 0
+	2. maximum value : 2powern -1
+
+where n is the size of data type in bits
+
+### precision of floating point data type.
+	1. float upto 6-7 decimal  fs  = %f   ex-
+	2. double upto 15-16 decimal fs = %lf ex-
+	3. long double 18-19 decimal fs = %Lf ex-
+
+## bitwise Operator
+	1. & and :return 1 only if both bits are 1
+	2. | or : return 1 if any of 2 bits are 1
+	3. ^ xor : return 1 if both values are different
+unary.
+	4. ~ negate : invert all bits
+	5. << left shift : put zero on the right side and shift by given no. ex 2<<1 value of 2 in bits left shift by 1. 
+	6. >> right shift : put zero on left side and shift by given no. ex 2>>1 value of 2 in bits right shift by 1
+
+### Other operators
+	1. sizeof(operator)  --- unary operator
+	2. ternary operator -- condition  a>b? a:b;
+
+### switch case expression 
+note : switch only work for either char or integer.
+
+switch(choice){
+    case 1:
+        printf("You Order Coffee\n");
+        break;
+    case 2:
+        printf("You Order Chai\n");
+        break;
+    case 3:
+        printf("You Order Burger\n");
+        break;
+    case 4:
+        printf("You Order Samosa\n");
+        break;
+    default:
+        printf("Thanks For using Vending Machine\n");
+        break;
+    }
+
+#### some error while define ####
+
+"error: invalid type argument of unary"
+bcoz i used ';' at the end of the define marco.
+
+instead, use #define PI 3.14 only.. never use semicolon at the end as it will use semicolon where you will use this macro.
+
+## patterns ##
+rules:-
+1. 'i' makes rows.
+2. 'j' makes column.
+
+### recursion ###
+Recursion is a process in which a function calls itself directly and indirectly to solve the problem.
+ 1.now a recursion function will keep calling itself again again resulting in infinite loop, to solve this we use some
+	condition known as base case. which will help it break after some try.
+
+## array ##
+ homogeneous collection of data
+ store only character thats called string.
+ 1. array is continous memory.
+ 2. type of data stored decide the size of array for ex. int type array storing 5 value will take 20(5x4) bytes.
+ 3. system gives array base a random address.then increase from there accourding to data type.
+
+ ?? syntax
+   int array[];   // declaration
+   int array[5] = {1,2,3,4,5}  // initialization.
+
+## notes 
+a = printf("hello");
+printf("%d",a);
+if you do above this will print hello and second printf will print no. character that is store in 'a'.
+
+## printf("%d %d %d,x++,x,--x); 6,7,7
+this is undefined behaviour error.
+
+### 2D array ###
+
+arr[2][3] == 2 rows, 3 colms.
+first row and then column.
+
+### strings ###
+
+strings are sequence of character or collection of character.
+
+1. define in 3 ways
+	char a[] = "techno"
+	char a[10] ="techno"
+	char a[10] = {'t','e','c','h','n','o','\0'};    // \0 is must as it ends strings. otherwise it will keep accessing remaining space.
+
+note : if you dont give '&' in scanf it still going to print it.
+
+### for strings : 
+puts \\ different than printf as it will only work for strings.
+gets \\ different than scanf only for strings cannot for use with other data type. accept space also 
+
+1. strcpy(destination, source);
+source se destination pe copy;
+
+//strcmp(start, input);  // strcmp(compare with, compare this);
+
+scanf("%[^\n]*%s", &(p->name));  // use this when you want to enter string with space in between. %s for string, %c for char.
+
+#
+#include<stdio.h>
+int foo(int a){
+    printf("%d",a);
+}
+
+int main(){
+    foo;
+}
+// this will not give error but if foo have bracket it will give you error.
+
+### is structure name is not given its called anonymouse structure.
+
+two ways for struct declaration.
+
+1. struct technoscript{
+	char
+	int
+	float
+};    // anonymouse structure
+
+2. struct {
+	char 
+	int 
+	float
+} x1;
+
+
+## structure padding good for cpu cycle but not for memory. 
+this can be clear by using #pragma pack(1). directive. 
+but will result in more cpu cycle.
+
+## union:
+// union share the size of memory.
+first it takes largest data memory and then share it with other 
+for example:
+int char char ;
+union will take int size and become 4 byte himself. and char char have to share that.
+
+
+### pointer 
+
+1. void pointer. can take any datatype pointer bcoz it is not specific datatype.
+2. null pointer .by using this you can leave an pointer un initialize and in compilation or runtime does not give error.
+3. dynamic pointer also knowns as dangling pointer. asi memory ka pointer jo destroy ho chuka h.
+
+4. array handling through pointer :-
+	*p = a[0];
+	*p+1 or *p+2 is meant for parsing the array with address.
+	as p holds the address of a[0]. and we are increasing pointer for array increase.
+
+5. double pointer ** this measn it can access a address in a pointer having address of other variable.
+6. wild pointer . a type of pointer that dereference a memory loaction that is not initialize yet.
+
+## dynamic memory allocation.
+
+stack for static and local/global variables in compile time.
+heap for dynamic memory allocation in runtime.
+
+1. (memory allocation) malloc -> return first block address when memory got allocated , but return null when it can't store any value.
+	when no value return contious address, 
+2. (continuous allocation) calloc -> takes 2 arguments, when memory cannot be allocated it will return null and normally return array.
+	when no value return 0;
+
+3. (re allocation) realloc -> re allocate memory onward your old ptr then use this. 
+
+
+### File handling 
+
+1. file handling is a way to handle file creation, alter from C program . it loads file from secondary drive into primary drive like RAM.
+2. has 12 modes derived but primary 3 modes read (r), write(w), append(a) are there.
+
+//write mode overwrite file every time.
+// but append will not overwrite instead continue on it.
+
+### storage class
+
+define lifetime and scope of a variable and functions.
+1. auto -- Ram-- garbage --  within block -- till the block
+2. static -- Ram -- 0 -- within block -- till the termination of the program.
+3. extern -- Ram -- 0/garbage -- anywhere in program -- till the termination of program.
+4. register -- register -- garbage -- within block -- till the block.

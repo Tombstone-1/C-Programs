@@ -1,0 +1,33 @@
+//string definitions and use 
+#include<stdio.h>
+#include"macrocircle.c"
+
+String:
+    collection fo characters     
+	Syntax: char string_name[length];          
+	
+	Initialization Syntax:         
+		char str[10]={"welcome"};    
+		OR                  
+		char str[10]={'w','e','l','c','o','m','e'};
+
+Reading and writing function in string:    
+	1.writing functions:        
+		1. printf();        
+		2. puts();        
+		Syntax: puts(string_name);            
+		
+	2. Reading functions:        
+	1. scanf()        
+	2. gets()        
+	Syntax: gets(string_name);
+	
+String handling functions:
+    1. strlen() : display the length of the string    
+	2. strcpy() : copy one string to another string    
+	3. strcmp() : compare two strings    
+	4. strcat() : append two string    
+	5. strlwr() : convert into lower case
+    6. strupr() : convert into upper case
+    
+    
