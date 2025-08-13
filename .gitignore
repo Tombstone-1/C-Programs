@@ -1,3 +1,4 @@
 // folder, files and extension name that you do not want to push.
-.exe
-[A
+# Executables
+*.exe
+*.out
